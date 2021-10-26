@@ -1,0 +1,25 @@
+#include<stdio.h>
+int x[10],y[10],z[10];
+int m,n,i,j;
+void main()
+{
+printf("Enter sizes of  2 sequences m,n\n");
+scanf("%d%d",&m,&n);
+printf("Enter first sequence x\n");
+for(i=0;i<m;i++)
+scanf("%d",&x[i]);
+printf("Enter second sequence y\n");
+for(i=0;i<n;i++)
+scanf("%d",&y[i]);
+for(i=n;i<m+n-1;i++)
+y[i]=0;
+for(i=-1;i>-m;i--)
+y[i]=0;
+for(i=0;i<m+n-1;i++)
+{
+z[i]=0;
+for(j=0;j<m;j++)
+z[i]=(x[j]*y[i-j])+z[i];
+printf("%d\t",z[i]);
+}
+}
